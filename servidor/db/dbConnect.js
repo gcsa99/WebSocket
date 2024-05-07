@@ -1,15 +1,20 @@
 import { MongoClient } from "mongodb";
-import dotenv from "dotenv";
-dotenv.config();
 
-const client = new MongoClient(process.env.DBSTRING);
+const cliente = new MongoClient(
+  "mongodb+srv://alura:123@aluracluster.lp6gdyc.mongodb.net/?retryWrites=true&w=majority"
+);
+
 let documentosColecao;
+
 try {
-  await client.connect();
-  const db = client.db("alura-websockets");
+  await cliente.connect();
+
+  const db = cliente.db("alura-websockets");
   documentosColecao = db.collection("documentos");
+
   console.log("Conectado ao banco de dados com sucesso!");
 } catch (erro) {
   console.log(erro);
 }
+
 export { documentosColecao };
