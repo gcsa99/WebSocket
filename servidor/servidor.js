@@ -15,8 +15,20 @@ app.use(express.static(diretorioPublico));
 
 const servidorHttp = http.createServer(app);
 
-servidorHttp.listen(porta, () => console.log(`Servidor escutando na porta ${porta}`));
+servidorHttp.listen(porta, () =>
+  console.log(`Servidor escutando na porta ${porta}`)
+);
 
-const io = new Server(servidorHttp);
+/* 
+Usado para simular erro de cors
+const servidorHttp2 = http.createServer(app);
+servidorHttp2.listen(5000, () =>
+  console.log(`Servidor escutando na porta 5000`)
+); */
+const io = new Server(servidorHttp, {
+  cors: {
+    origin: "http://localhost:5000", //EXEMPLO DE LIBERAÇÃO DE CORS
+  },
+});
 
 export default io;

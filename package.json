@@ -1,7 +1,7 @@
 {
-  "name": "alura-docs",
-  "version": "1.0.0",
-  "description": "",
+  "name": "edit-docs",
+  "version": "0.0.1",
+  "description": "O EditDocs é um editor de documentos online desenvolvido como parte de um curso de WebSockets.\r O projeto permite que múltiplos usuários colaborem em tempo real em documentos compartilhados.\r Além disso, implementa funcionalidades de cadastro, login e controle de acesso utilizando JSON Web Tokens (JWT) para garantir a segurança dos dados e a autenticação dos usuários.\r Funcionalidade de acesso a diversos documentos.\r Listagem de usuários online em um mesmo documento.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -10,17 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antonio-evaldo/alura-docs.git"
+    "url": "git+https://github.com/gcsa99/WebSocket.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "gcsa99",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/antonio-evaldo/alura-docs/issues"
-  },
-  "homepage": "https://github.com/antonio-evaldo/alura-docs#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "4.11",
     "socket.io": "^4.5.3"
   },

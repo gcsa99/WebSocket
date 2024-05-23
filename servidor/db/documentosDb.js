@@ -1,10 +1,11 @@
 import { documentosColecao } from "./dbConnect.js";
 
+//Busca os documentos na coleção
 function obterDocumentos() {
   const documentos = documentosColecao.find().toArray();
   return documentos;
 }
-
+//Adiciona um documento na coleção
 function adicionarDocumento(nome) {
   const resultado = documentosColecao.insertOne({
     nome,
@@ -14,6 +15,7 @@ function adicionarDocumento(nome) {
   return resultado;
 }
 
+//Busca de documento por nome
 function encontrarDocumento(nome) {
   const documento = documentosColecao.findOne({
     nome,
@@ -21,7 +23,7 @@ function encontrarDocumento(nome) {
 
   return documento;
 }
-
+//Atualiza o texto do documento
 function atualizaDocumento(nome, texto) {
   const atualizacao = documentosColecao.updateOne(
     {
